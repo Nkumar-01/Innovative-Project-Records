@@ -6,31 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css_file.css"> 
+    <!-- <script>
+      function displayDate() {
+        document.getElementById("timestamp").value = Date();
+      }
+    </script> -->
+    <script>
+      function displayDate() {
+        var today = new Date();
+        var date = today.getDate()+ '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        document.getElementById("date").value = date;
+      }
+    </script>
+    
 </head>
 <body style="margin-left:25%;">
     
 
 
-<div id="contact">
+<div id="contact"> 
     
     <div class="container">
         <br><br>
         <h1  class="initial">Is Your Project Idea Unique <a href="https://docs.google.com/spreadsheets/d/1Qh_PjwtVmby5-EgFW6Q1NntDlbHFfWGLZXixdsEtL2s/edit#gid=0">Check Here</a></h1>
-      <br><br>
+      <br><br><br>
       <h1>Enter Details of Your New Project</h1>
       <br>
       <div class="row">
         <div class="contact-right">
-          <form name="submit-to-google-sheet">
+          <form name="submit-to-google-sheet" onsubmit="displayDate()">
             <input type="text" name="Project Name" placeholder="Enter Project Title" required>
             <input type="text" name="Domain" placeholder="Enter Domain Name" required>
-            <input type="date" name="Date" placeholder="Enter Date" required>
+            <!-- <input type="date" name="Date" placeholder="Enter Date" required> -->
 
             <input type="text" name="Team Name" placeholder="Enter Team Name" required>
             <!-- <input type="text" name="Team Details" placeholder="" required> -->
             <textarea name="Team Details" rows="6" placeholder="Enter Team Details"></textarea>
             <textarea name="Project Details" rows="6" placeholder="Give Project Details"></textarea>
-            <button style="margin-left: 40%;" type="submit" class="btn btn2">Submit</button>
+            
+            <input type="text" name="Time" id="date" placeholder="dd / mm / yyyy" style="display: none;"><br><br>
+            <!-- <p type="text" name="Time" id="date" readonly></p> -->
+            <button style="text-align: center; margin-left: 40%;" type="submit" class="btn btn2">Submit</button>
+          
+            
           </form>
           <span id="msg"></span>
         </div>
