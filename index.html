@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css_file.css"> 
-    <!-- <script>
-      function displayDate() {
-        document.getElementById("timestamp").value = Date();
-      }
-    </script> -->
+    
     <script>
       function displayDate() {
         var today = new Date();
@@ -37,15 +33,12 @@
           <form name="submit-to-google-sheet" onsubmit="displayDate()">
             <input type="text" name="Project Name" placeholder="Enter Project Title" required>
             <input type="text" name="Domain" placeholder="Enter Domain Name" required>
-            <!-- <input type="date" name="Date" placeholder="Enter Date" required> -->
-
+            
             <input type="text" name="Team Name" placeholder="Enter Team Name" required>
-            <!-- <input type="text" name="Team Details" placeholder="" required> -->
             <textarea name="Team Details" rows="6" placeholder="Enter Team Details"></textarea>
             <textarea name="Project Details" rows="6" placeholder="Give Project Details"></textarea>
             
             <input type="text" name="Time" id="date" placeholder="dd / mm / yyyy" style="display: none;"><br><br>
-            <!-- <p type="text" name="Time" id="date" readonly></p> -->
             <button style="text-align: center; margin-left: 40%;" type="submit" class="btn btn2">Submit</button>
           
             
@@ -54,9 +47,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="copyright">
-      <p>Copyright <i class="fa-solid fa-copyright"></i> Nitin</p>
-    </div> -->
   </div>
   
   <script>
@@ -86,14 +76,6 @@
       sidemenu.style.right = "-200px";
     }
   </script>
-
-
-<!-- 
-<form name="submit-to-google-sheet">
-  <input name="email" type="email" placeholder="Email" required>
-  <button type="submit">Send</button>
-</form> -->
-
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwEYKUnoNTe48HtidqFgsdlEa1mjnZkPJEWeBoWjJs6xOjNXXiYv7WHDQsb6yKBZdlS/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -102,7 +84,7 @@
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-        msg.innerHTML = "Message sent successfully" 
+        msg.innerHTML = "Details Added Successfully" 
         setTimeout(function(){
           msg.innerHTML=""
         },5000)
