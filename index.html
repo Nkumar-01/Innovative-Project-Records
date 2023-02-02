@@ -16,16 +16,28 @@
     </script>
     
 </head>
-<body style="margin-left:25%;">
-    
-
-
-<div id="contact"> 
+<body>
+  <header>
+    <!-- <div id="profile-logo"> -->
+      <!-- <img src="in.png" id="logo-img"> -->
+    <!-- </div> -->
+    <h1>Innovative Project Records</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="login.html"></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+<div id="contact" style="margin-left:25%;"> 
     
     <div class="container">
         <br><br>
         <h1  class="initial">Is Your Project Idea Unique <a href="https://docs.google.com/spreadsheets/d/1Qh_PjwtVmby5-EgFW6Q1NntDlbHFfWGLZXixdsEtL2s/edit#gid=0">Check Here</a></h1>
-      <br><br><br><br>
+      <br><br><br>
       <h1>Enter Details of Your New Project</h1>
       <br>
       <div class="row">
@@ -33,12 +45,15 @@
           <form name="submit-to-google-sheet" onsubmit="displayDate()">
             <input type="text" name="Project Name" placeholder="Enter Project Title" required>
             <input type="text" name="Domain" placeholder="Enter Domain Name" required>
-            
+            <!-- <input type="date" name="Date" placeholder="Enter Date" required> -->
+
             <input type="text" name="Team Name" placeholder="Enter Team Name" required>
+            <!-- <input type="text" name="Team Details" placeholder="" required> -->
             <textarea name="Team Details" rows="6" placeholder="Enter Team Details"></textarea>
             <textarea name="Project Details" rows="6" placeholder="Give Project Details"></textarea>
             
             <input type="text" name="Time" id="date" placeholder="dd / mm / yyyy" style="display: none;"><br><br>
+            <!-- <p type="text" name="Time" id="date" readonly></p> -->
             <button style="text-align: center; margin-left: 40%;" type="submit" class="btn btn2">Submit</button>
           
             
@@ -47,6 +62,7 @@
         </div>
       </div>
     </div>
+   
   </div>
   
   <script>
@@ -76,6 +92,7 @@
       sidemenu.style.right = "-200px";
     }
   </script>
+
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwEYKUnoNTe48HtidqFgsdlEa1mjnZkPJEWeBoWjJs6xOjNXXiYv7WHDQsb6yKBZdlS/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -84,7 +101,7 @@
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-        msg.innerHTML = "Details Added Successfully" 
+        msg.innerHTML = "Message sent successfully" 
         setTimeout(function(){
           msg.innerHTML=""
         },5000)
